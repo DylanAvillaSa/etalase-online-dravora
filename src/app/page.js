@@ -23,9 +23,12 @@ export default function PremiumCleaningLanding() {
   ];
 
   const gallery = [
-    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
-    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "/1.jpeg",
+    "/2.jpeg",
+    "/3.jpeg",
+    "/4.jpeg",
+    "/5.jpeg",
+    "/6.jpeg",
   ];
 
   return (
@@ -106,6 +109,36 @@ export default function PremiumCleaningLanding() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICE LIST */}
+      <section className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="text-blue-600 font-semibold tracking-wide">
+              FAST CLEAN
+            </span>
+
+            <h2 className="text-3xl md:text-4xl font-bold mt-3">
+              Daftar Harga Layanan
+            </h2>
+
+            <p className="text-slate-500 mt-4">
+              Berikut daftar harga layanan Fast Clean yang dapat disesuaikan
+              dengan kebutuhan kebersihan rumah maupun kantor Anda.
+            </p>
+          </div>
+
+          <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl border border-slate-200">
+            <Image
+              src="/daftar-harga.jpeg"
+              width={1200}
+              height={1600}
+              alt="Daftar Harga Fast Clean"
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>

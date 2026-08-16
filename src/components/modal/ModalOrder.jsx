@@ -7,7 +7,10 @@ const ModalOrder = ({
   setModalOrder,
   handleIncreaseItem,
   handleDecreaseItem,
+  handleDeleteItem,
   totalPaid,
+  setCustomerNote,
+  handleOrder,
 }) => {
   return (
     <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-6">
@@ -113,7 +116,10 @@ const ModalOrder = ({
                         </button>
                       </div>
 
-                      <button className="text-[11px] font-medium text-red-400 hover:text-red-500">
+                      <button
+                        onClick={() => handleDeleteItem(item)}
+                        className="text-[11px] font-medium text-red-400 hover:text-red-500"
+                      >
                         Hapus
                       </button>
                     </div>
@@ -162,6 +168,7 @@ const ModalOrder = ({
 
             <textarea
               rows={3}
+              onChange={(e) => setCustomerNote(e.target.value)}
               placeholder="Contoh: sambalnya dipisah, jangan terlalu pedas..."
               className="w-full resize-none rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-zinc-300 focus:bg-white focus:ring-4 focus:ring-zinc-100"
             />
@@ -188,7 +195,10 @@ const ModalOrder = ({
 
         {/* Footer */}
         <div className="shrink-0 border-t border-zinc-100 bg-white p-4 sm:p-5">
-          <button className="flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-5 text-sm font-bold text-white shadow-lg shadow-green-500/20 transition hover:bg-[#20bd5c] active:scale-[0.98]">
+          <button
+            onClick={handleOrder}
+            className="flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-5 text-sm font-bold text-white shadow-lg shadow-green-500/20 transition hover:bg-[#20bd5c] active:scale-[0.98]"
+          >
             <svg viewBox="0 0 32 32" fill="currentColor" className="h-5 w-5">
               <path d="M19.11 17.21c-.29-.14-1.71-.84-1.98-.94-.27-.1-.47-.14-.67.14-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.08-.29-.14-1.21-.45-2.3-1.44-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51h-.57c-.19 0-.5.07-.76.36-.26.29-1 0.98-1 2.38 0 1.4 1.02 2.76 1.16 2.95.14.19 2.01 3.07 4.87 4.3.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.71-.7 1.95-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.33Z" />
               <path d="M16.02 2.67C8.66 2.67 2.67 8.66 2.67 16c0 2.35.61 4.65 1.77 6.67L2.6 29.33l6.84-1.79A13.3 13.3 0 0 0 16.02 29.33C23.36 29.33 29.33 23.34 29.33 16S23.36 2.67 16.02 2.67Zm0 24.27c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-4.06 1.06 1.08-3.96-.28-.45A10.95 10.95 0 1 1 16.02 26.94Z" />

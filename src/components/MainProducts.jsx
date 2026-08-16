@@ -14,6 +14,7 @@ import ModalOrder from "./modal/ModalOrder";
 
 const MainProducts = () => {
   const [cart, setCart] = useState([]);
+  const [customerNote, setCustomerNote] = useState("");
   const [modalOrder, setModalOrder] = useState(false);
   const [searchVal, setSearchVal] = useState("");
   const [category, setCategory] = useState("semua");
@@ -58,6 +59,10 @@ const MainProducts = () => {
     });
   };
 
+  const handleDeleteItem = (item) => {
+    setCart((prev) => prev.filter((p) => p.id !== item.id));
+  };
+
   const handleProduct = (product) => {
     setCart((prev) => {
       const itemExist = prev.find((item) => item.id === product.id);
@@ -70,6 +75,43 @@ const MainProducts = () => {
         );
       }
     });
+  };
+
+  const handleOrder = () => {
+    const phoneNumber = "6288994591141";
+
+    const orderDetails = cart
+      .map((item) => {
+        const subtotal = item.price * item.qty;
+
+        return `• ${item.name} x${item.qty} - Rp${subtotal.toLocaleString(
+          "id-ID",
+        )}`;
+      })
+      .join("\n");
+
+    const total = cart.reduce(
+      (total, item) => total + item.price * item.qty,
+      0,
+    );
+
+    const message = `Halo Kak 👋
+
+Saya mau pesan:
+
+${orderDetails}
+
+Catatan Tambahan : ${customerNote}
+--------------------
+Total: Rp${total.toLocaleString("id-ID")}
+
+Mohon diproses ya Kak. Terima kasih 🙏`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message,
+    )}`;
+
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -129,6 +171,9 @@ const MainProducts = () => {
             totalPaid={totalPaid}
             handleIncreaseItem={handleIncreaseItem}
             handleDecreaseItem={handleDecreaseItem}
+            handleDeleteItem={handleDeleteItem}
+            handleOrder={handleOrder}
+            setCustomerNote={setCustomerNote}
             setModalOrder={setModalOrder}
           />
         )}

@@ -21,7 +21,7 @@ const SearchBar = ({ setSearchVal }) => {
 
         <input
           type="text"
-          placeholder="Cari menu..."
+          placeholder="Cari produk..."
           onChange={(e) => setSearchVal(e.target.value)}
           className="h-14 w-full rounded-2xl border border-zinc-200 bg-white pl-12 pr-4 text-sm outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-4 focus:ring-zinc-100"
         />

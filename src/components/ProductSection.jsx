@@ -12,12 +12,12 @@ const ProductSection = ({ filteredProducts, handleProduct }) => {
           </p>
 
           <h3 className="mt-1 text-2xl font-bold tracking-tight">
-            Menu favorit
+            Pilih produk
           </h3>
         </div>
 
         <span className="text-sm text-zinc-400">
-          {filteredProducts.length} menu
+          {filteredProducts.length} produk
         </span>
       </div>
 

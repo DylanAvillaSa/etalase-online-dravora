@@ -6,7 +6,7 @@ const Header = ({ cart }) => {
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <div>
           <p className="text-xs font-medium text-zinc-400">ETALASE ONLINE</p>
-          <h1 className="text-lg font-bold tracking-tight">Kedai Bu Siti</h1>
+          <h1 className="text-lg font-bold tracking-tight">Dravora Store</h1>
         </div>
 
         <button className="relative flex h-11 w-11 items-center justify-center rounded-full bg-zinc-900 text-white shadow-sm transition hover:bg-zinc-800">

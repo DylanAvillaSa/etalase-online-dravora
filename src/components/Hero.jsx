@@ -10,18 +10,18 @@ const Hero = () => {
 
         <div className="relative max-w-xl">
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-zinc-200 ring-1 ring-white/10">
-            🍽️ Makanan rumahan
+            ✨ Produk pilihan untuk kamu
           </span>
 
           <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-            Makan enak,
+            Temukan yang kamu cari,
             <br />
             tinggal pilih.
           </h2>
 
           <p className="mt-3 max-w-md text-sm leading-6 text-zinc-300 sm:text-base">
-            Pilih menu favorit kamu dan pesan langsung melalui WhatsApp.
-            Gampang, cepat, tanpa ribet.
+            Jelajahi berbagai produk pilihan dan temukan barang yang sesuai
+            dengan kebutuhan kamu. Mudah, cepat, tanpa ribet.
           </p>
         </div>
       </div>
